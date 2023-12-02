@@ -1,4 +1,6 @@
 package uz.example.daggerlesson.package1
 
-class Processor {
+import javax.inject.Inject
+
+class Processor @Inject constructor() {
 }

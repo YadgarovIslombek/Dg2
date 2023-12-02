@@ -2,10 +2,9 @@ package uz.example.daggerlesson.package1
 
 import dagger.Component
 
-@Component
+@Component(modules = [ComputerModul::class])
 interface NewComponent {
 
-    fun getKeyboard():Keyboard
     fun inject(activity: Activity)
 
 }

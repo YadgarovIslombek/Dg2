@@ -3,8 +3,8 @@ package uz.example.daggerlesson.package1
 import javax.inject.Inject
 
 class Activity {
-     val keyboard: Keyboard
-        get() =DaggerNewComponent.create().getKeyboard()
+    @Inject
+    lateinit var computer: Computer
 
     init {
         DaggerNewComponent.create().inject(this)
