@@ -1,17 +1,15 @@
 package uz.example.daggerlesson.package2.presentation
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import uz.example.daggerlesson.R
 import uz.example.daggerlesson.package2.App
 import uz.example.daggerlesson.package2.di.DaggerAppComponent
 
 import javax.inject.Inject
-class MainActivity : AppCompatActivity() {
+class MainActivity2 : AppCompatActivity() {
     @Inject
     lateinit var viewModelFactory:ViewModelFactory
     private val componet by lazy {
@@ -26,14 +24,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
        componet.inject(this)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main2)
         viewModel.method()
         viewModel2.method()
-        findViewById<TextView>(R.id.txt).setOnClickListener {
-            Intent(this,MainActivity2::class.java).apply {
-                startActivity(this)
-            }
-        }
 
     }
 }

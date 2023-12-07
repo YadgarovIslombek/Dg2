@@ -11,17 +11,9 @@ import uz.example.daggerlesson.package2.data.datasource.ExampleRemoteDataSource
 import uz.example.daggerlesson.package2.data.datasource.ExampleRemoteDataSourceImpl
 
 @Module
-class DataModule(private val context: Context) {
-    @Provides
-    fun bindExampleLocalDataSource(impl:ExampleLocalDataSourceImpl): ExampleLocalDataSource{
-        return impl
-    }
-    @Provides
-    fun bindExampleRemoteDataSource(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource{
-        return impl
-    }
-    @Provides
-    fun provides():Context{
-        return context
-    }
+interface DataModule {
+    @Binds
+    fun bindExampleLocalDataSource(impl:ExampleLocalDataSourceImpl): ExampleLocalDataSource
+    @Binds
+    fun bindExampleRemoteDataSource(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource
 }

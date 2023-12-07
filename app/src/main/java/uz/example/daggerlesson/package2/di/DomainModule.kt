@@ -10,6 +10,7 @@ import uz.example.daggerlesson.package2.domain.ExampleRepository
  interface DomainModule {
 
     @Binds
+    @ApplicationScope
     fun bindExampleRepository(impl: ExampleRepositoryImpl): ExampleRepository
 
 
