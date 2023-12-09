@@ -10,10 +10,9 @@ import uz.example.daggerlesson.package2.presentation.MainActivity2
 import javax.inject.Singleton
 
 @ApplicationScope
-@Component(modules = [DataModule::class, DomainModule::class,ViewModelModule::class])
+@Component(modules = [DataModule::class, DomainModule::class])
 interface AppComponent {
-    fun inject(activity: MainActivity)
-    fun inject(activity: MainActivity2)
+
 
     //    @Component.Builder
 //    interface MyAppComponentBuilder {
@@ -24,6 +23,9 @@ interface AppComponent {
 //        fun getTimer(time:Long):MyAppComponentBuilder
 //        fun create():AppComponent
 //    }
+
+
+    fun getActivityComponentFactory():ActivityComponent.Factory
     @Component.Factory
     interface MyAppComponentBuilder {
 

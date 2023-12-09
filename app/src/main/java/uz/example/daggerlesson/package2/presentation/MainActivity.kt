@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var viewModelFactory:ViewModelFactory
     private val componet by lazy {
         (application as App).component
+            .getActivityComponentFactory()
+            .create("ID","NAME")
    }
     private val viewModel by lazy {
         ViewModelProvider(this,viewModelFactory)[ExampleViewModel::class.java]
@@ -34,6 +36,5 @@ class MainActivity : AppCompatActivity() {
                 startActivity(this)
             }
         }
-
     }
 }

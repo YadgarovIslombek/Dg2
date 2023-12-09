@@ -13,12 +13,12 @@ interface ViewModelModule { // 24fgs
 
     @Binds
     @IntoMap
-    @StringKey("ExampleViewModel")
+    @ViewModelKey(ExampleViewModel::class)
     fun bindExampleViewModel(imp:ExampleViewModel):ViewModel
 
     @Binds
     @IntoMap
-    @StringKey("ExampleViewModel2")
+    @ViewModelKey(ExampleViewModel2::class)
     fun bindExampleViewModel2(impl:ExampleViewModel2): ViewModel
 
 }
